@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp3w5dugpoh8y"]
+
+[ext_resource type="FontFile" uid="uid://d1ro8oqkrs5k6" path="res://Pricedown Bl.otf" id="1_6sfst"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24kvk"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 7
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -2.0
+offset_right = 40.0
+offset_bottom = 38.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.1
+anchor_top = 6.437
+anchor_right = 8.1
+anchor_bottom = 6.437
+offset_left = -132.0
+offset_top = -41.48
+offset_right = 132.0
+offset_bottom = 41.52
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_6sfst")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_24kvk")
+text = "Quit Game"

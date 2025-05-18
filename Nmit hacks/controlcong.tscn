@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://t5ug773jp07h"]
+
+[ext_resource type="FontFile" uid="uid://tf1gjclha0gd" path="res://Pricedown Bl.otf" id="1_1ps3w"]
+[ext_resource type="Script" uid="uid://2r8bbq8rokwp" path="res://controlcong.gd" id="1_ard82"]
+[ext_resource type="Texture2D" uid="uid://d0kiettdkffs5" path="res://20250517_1328_Game Victory Screen_remix_01jvekyh1pfzesn2rqjs50hcjn.png" id="1_wlmcl"]
+[ext_resource type="Script" uid="uid://cdjbyvowejb4m" path="res://button.gd" id="4_wu0yu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pa4rr"]
+texture = ExtResource("1_wlmcl")
+modulate_color = Color(0.517184, 0.517184, 0.517184, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wlmcl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa4rr"]
+bg_color = Color(0.172833, 0.172833, 0.172833, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlmcl"]
+bg_color = Color(0.114897, 0.114897, 0.114897, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 8
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ard82")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_pa4rr")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = 145.0
+offset_right = 5.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0.705882, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.576471, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.65098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1ps3w")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wlmcl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pa4rr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wlmcl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wlmcl")
+text = "QUIT GAME"
+script = ExtResource("4_wu0yu")
+
+[connection signal="pressed" from="Button" to="." method="_on_exit_pressed"]

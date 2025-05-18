@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=3 uid="uid://bv7idkr2keijh"]
+
+[ext_resource type="Texture2D" uid="uid://dx53ingn76tpw" path="res://20250517_1202_End Game Screen_remix_01jvef0bpvffm90f9mec8jkfpn.png" id="1_62e2m"]
+[ext_resource type="Script" uid="uid://0xaf8hopl40" path="res://control.gd" id="1_qtu10"]
+[ext_resource type="FontFile" uid="uid://d1ro8oqkrs5k6" path="res://Pricedown Bl.otf" id="2_qtu10"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ee4bf"]
+texture = ExtResource("1_62e2m")
+modulate_color = Color(0.851769, 0.851769, 0.851769, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbped"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj5cn"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy58a"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uchyk"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.4)
+
+[node name="wasted(exit)" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qtu10")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -3.0
+offset_right = -5.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ee4bf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 403.0
+offset_right = 796.0
+offset_bottom = 546.0
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.529066, 0.529067, 0.529065, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/h_separation = 15
+theme_override_constants/icon_max_width = 15
+theme_override_constants/align_to_largest_stylebox = 15
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("2_qtu10")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kbped")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fj5cn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iy58a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uchyk")
+text = "Retry"
+
+[node name="Quit game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.572988, 0.572989, 0.572986, 1)
+theme_override_constants/outline_size = 15
+theme_override_constants/h_separation = 15
+theme_override_constants/icon_max_width = 15
+theme_override_constants/align_to_largest_stylebox = 15
+theme_override_constants/line_spacing = 15
+theme_override_fonts/font = ExtResource("2_qtu10")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kbped")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fj5cn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iy58a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uchyk")
+text = "Quit Game"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -96.0
+offset_right = 213.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qtu10")
+theme_override_font_sizes/font_size = 56
+text = "WASTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit game" to="." method="_on_exit_pressed"]
