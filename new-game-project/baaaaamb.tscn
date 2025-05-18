@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://67wl0op2fijt"]
+
+[ext_resource type="Texture2D" uid="uid://48jennhg81op" path="res://bombing.png" id="1_nraqa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7hiu"]
+size = Vector2(34.5, 25)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(434, 261.875)
+scale = Vector2(0.0808825, 0.0958738)
+texture = ExtResource("1_nraqa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(435, 259)
+shape = SubResource("RectangleShape2D_m7hiu")

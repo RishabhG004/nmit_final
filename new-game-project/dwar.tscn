@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp01qxcis7igo"]
+
+[ext_resource type="Texture2D" uid="uid://crjrxt0f2utir" path="res://LEVER.png" id="1_wevy8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wevy8"]
+size = Vector2(75, 103)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(55.75, 248.5)
+scale = Vector2(3.71951, 4.28261)
+texture = ExtResource("1_wevy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(69.5, 267.5)
+shape = SubResource("RectangleShape2D_wevy8")
